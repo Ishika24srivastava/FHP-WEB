@@ -1,0 +1,11 @@
+C:\Users\Hp\source\repos\FHP\FHP\bin\Release\FHP.exe.config
+C:\Users\Hp\source\repos\FHP\FHP\bin\Release\FHP.exe
+C:\Users\Hp\source\repos\FHP\FHP\bin\Release\FHP.pdb
+C:\Users\Hp\source\repos\FHP\FHP\obj\Release\FHP.csproj.AssemblyReference.cache
+C:\Users\Hp\source\repos\FHP\FHP\obj\Release\FHP.Form1.resources
+C:\Users\Hp\source\repos\FHP\FHP\obj\Release\FHP.Form2.resources
+C:\Users\Hp\source\repos\FHP\FHP\obj\Release\FHP.Properties.Resources.resources
+C:\Users\Hp\source\repos\FHP\FHP\obj\Release\FHP.csproj.GenerateResource.cache
+C:\Users\Hp\source\repos\FHP\FHP\obj\Release\FHP.csproj.CoreCompileInputs.cache
+C:\Users\Hp\source\repos\FHP\FHP\obj\Release\FHP.exe
+C:\Users\Hp\source\repos\FHP\FHP\obj\Release\FHP.pdb
