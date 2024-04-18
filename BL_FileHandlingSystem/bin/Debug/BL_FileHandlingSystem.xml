@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BL_FileHandlingSystem</name>
+    </assembly>
+    <members>
+        <member name="T:BL_FileHandlingSystem.BusinessLogic">
+            <summary>
+            Business Logic Class to use the Method of Business Module
+            </summary>
+        </member>
+        <member name="M:BL_FileHandlingSystem.BusinessLogic.SetConfigurations(VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            
+            </summary>
+            <param name="vlo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BL_FileHandlingSystem.BusinessLogic.Initialize(VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            Open or create the data file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BL_FileHandlingSystem.BusinessLogic.ReleaseObjects(VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            release the object of Data library class
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BL_FileHandlingSystem.BusinessLogic.CheckValidUser(VO_FIleHandlingSystem.AuthenticatorValueObject,VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            Validate the user for authenticity
+            </summary>
+            <param name="vo"></param>
+            <param name="vlo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BL_FileHandlingSystem.BusinessLogic.Save(VO_FIleHandlingSystem.ValueObject,VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            Save the Record into the file
+            </summary>
+            <param name="vo"></param>
+            <param name="vlo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BL_FileHandlingSystem.BusinessLogic.Validate(VO_FIleHandlingSystem.ValueObject)">
+            <summary>
+            Validate the Data inserted by the user
+            </summary>
+            <param name="vo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BL_FileHandlingSystem.BusinessLogic.PadDataAsPerRecord">
+            <summary>
+            Function to take the data from value array and pad it accrodint to record structure
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

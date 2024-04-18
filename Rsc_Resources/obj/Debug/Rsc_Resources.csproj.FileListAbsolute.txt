@@ -1,0 +1,28 @@
+E:\csharp\Practice assignments\Winform\FileHandlingSystem\DLL\Rsc_Resources\bin\Debug\Rsc_Resources.dll
+E:\csharp\Practice assignments\Winform\FileHandlingSystem\DLL\Rsc_Resources\bin\Debug\Rsc_Resources.pdb
+E:\csharp\Practice assignments\Winform\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.csproj.AssemblyReference.cache
+E:\csharp\Practice assignments\Winform\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.csproj.CoreCompileInputs.cache
+E:\csharp\Practice assignments\Winform\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.dll
+E:\csharp\Practice assignments\Winform\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.pdb
+E:\csharp\Practice assignments\Winform\FileHandlingSystem\DLL\Rsc_Resources\bin\Debug\Rsc_Resources.xml
+E:\csharp\Practice assignments\Winform\FileHandlingSystemNew\FileHandlingSystem\DLL\Rsc_Resources\bin\Debug\Rsc_Resources.xml
+E:\csharp\Practice assignments\Winform\FileHandlingSystemNew\FileHandlingSystem\DLL\Rsc_Resources\bin\Debug\Rsc_Resources.dll
+E:\csharp\Practice assignments\Winform\FileHandlingSystemNew\FileHandlingSystem\DLL\Rsc_Resources\bin\Debug\Rsc_Resources.pdb
+E:\csharp\Practice assignments\Winform\FileHandlingSystemNew\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.csproj.AssemblyReference.cache
+E:\csharp\Practice assignments\Winform\FileHandlingSystemNew\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.csproj.CoreCompileInputs.cache
+E:\csharp\Practice assignments\Winform\FileHandlingSystemNew\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.dll
+E:\csharp\Practice assignments\Winform\FileHandlingSystemNew\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.pdb
+E:\csharp\Practice assignments\Winform\FHS\FHSwithDB\FileHandlingSystem\DLL\Rsc_Resources\bin\Debug\Rsc_Resources.xml
+E:\csharp\Practice assignments\Winform\FHS\FHSwithDB\FileHandlingSystem\DLL\Rsc_Resources\bin\Debug\Rsc_Resources.dll
+E:\csharp\Practice assignments\Winform\FHS\FHSwithDB\FileHandlingSystem\DLL\Rsc_Resources\bin\Debug\Rsc_Resources.pdb
+C:\VISPL\FHS\bin\Rsc_Resources.dll
+C:\VISPL\FHS\bin\Rsc_Resources.pdb
+C:\VISPL\FHS\bin\Rsc_Resources.xml
+E:\csharp\Practice assignments\Winform\FHS\FHSwithDB\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.csproj.AssemblyReference.cache
+E:\csharp\Practice assignments\Winform\FHS\FHSwithDB\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.csproj.CoreCompileInputs.cache
+E:\csharp\Practice assignments\Winform\FHS\FHSwithDB\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.dll
+E:\csharp\Practice assignments\Winform\FHS\FHSwithDB\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.pdb
+C:\Users\ishik\Downloads\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.csproj.AssemblyReference.cache
+C:\Users\ishik\Downloads\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.csproj.CoreCompileInputs.cache
+C:\Users\ishik\Downloads\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.dll
+C:\Users\ishik\Downloads\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.pdb

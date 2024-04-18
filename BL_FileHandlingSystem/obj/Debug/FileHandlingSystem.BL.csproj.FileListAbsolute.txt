@@ -1,0 +1,32 @@
+C:\VISPL\FHS\bin\BL_FileHandlingSystem.xml
+C:\VISPL\FHS\bin\BL_FileHandlingSystem.dll
+C:\VISPL\FHS\bin\BL_FileHandlingSystem.pdb
+C:\VISPL\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHandlingSystem.BL.csproj.AssemblyReference.cache
+C:\VISPL\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHandlingSystem.BL.csproj.CoreCompileInputs.cache
+C:\VISPL\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\BL_FileHandlingSystem.dll
+C:\VISPL\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\BL_FileHandlingSystem.pdb
+C:\VISPL\FHS VISPLOutputPath\BL_FileHandlingSystem.dll
+C:\VISPL\FHS VISPLOutputPath\BL_FileHandlingSystem.pdb
+C:\VISPL\FHS VISPLOutputPath\BL_FileHandlingSystem.xml
+C:\VISPL\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHand.EEEB3A74.Up2Date
+D:\FHS VISPLOutputPath\BL_FileHandlingSystem.dll
+D:\FHS VISPLOutputPath\BL_FileHandlingSystem.pdb
+D:\FHS VISPLOutputPath\BL_FileHandlingSystem.xml
+D:\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHandlingSystem.BL.csproj.AssemblyReference.cache
+D:\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHandlingSystem.BL.csproj.CoreCompileInputs.cache
+D:\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHand.EEEB3A74.Up2Date
+D:\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\BL_FileHandlingSystem.dll
+D:\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\BL_FileHandlingSystem.pdb
+D:\New folder\FHS VISPLOutputPath\BL_FileHandlingSystem.dll
+D:\New folder\FHS VISPLOutputPath\BL_FileHandlingSystem.pdb
+D:\New folder\FHS VISPLOutputPath\BL_FileHandlingSystem.xml
+D:\New folder\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHandlingSystem.BL.csproj.AssemblyReference.cache
+D:\New folder\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHandlingSystem.BL.csproj.CoreCompileInputs.cache
+D:\New folder\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHand.EEEB3A74.Up2Date
+D:\New folder\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\BL_FileHandlingSystem.dll
+D:\New folder\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\BL_FileHandlingSystem.pdb
+D:\FileHandlingSystemWEb\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHandlingSystem.BL.csproj.AssemblyReference.cache
+D:\FileHandlingSystemWEb\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHandlingSystem.BL.csproj.CoreCompileInputs.cache
+D:\FileHandlingSystemWEb\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\FileHand.EEEB3A74.Up2Date
+D:\FileHandlingSystemWEb\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\BL_FileHandlingSystem.dll
+D:\FileHandlingSystemWEb\FileHandlingSystem\DLL\BL_FileHandlingSystem\obj\Debug\BL_FileHandlingSystem.pdb

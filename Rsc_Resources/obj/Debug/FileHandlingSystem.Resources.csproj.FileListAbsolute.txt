@@ -1,0 +1,21 @@
+C:\VISPL\FHS\bin\Rsc_Resources.xml
+C:\VISPL\FHS\bin\Rsc_Resources.dll
+C:\VISPL\FHS\bin\Rsc_Resources.pdb
+C:\VISPL\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\FileHandlingSystem.Resources.csproj.AssemblyReference.cache
+C:\VISPL\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\FileHandlingSystem.Resources.csproj.CoreCompileInputs.cache
+C:\VISPL\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.dll
+C:\VISPL\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.pdb
+C:\VISPL\FHS VISPLOutputPath\Rsc_Resources.dll
+C:\VISPL\FHS VISPLOutputPath\Rsc_Resources.pdb
+C:\VISPL\FHS VISPLOutputPath\Rsc_Resources.xml
+D:\New folder\FHS VISPLOutputPath\Rsc_Resources.dll
+D:\New folder\FHS VISPLOutputPath\Rsc_Resources.pdb
+D:\New folder\FHS VISPLOutputPath\Rsc_Resources.xml
+D:\New folder\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\FileHandlingSystem.Resources.csproj.AssemblyReference.cache
+D:\New folder\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\FileHandlingSystem.Resources.csproj.CoreCompileInputs.cache
+D:\New folder\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.dll
+D:\New folder\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.pdb
+D:\FileHandlingSystemWEb\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\FileHandlingSystem.Resources.csproj.AssemblyReference.cache
+D:\FileHandlingSystemWEb\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\FileHandlingSystem.Resources.csproj.CoreCompileInputs.cache
+D:\FileHandlingSystemWEb\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.dll
+D:\FileHandlingSystemWEb\FileHandlingSystem\DLL\Rsc_Resources\obj\Debug\Rsc_Resources.pdb

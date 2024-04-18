@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DL_FileHandlingSystem</name>
+    </assembly>
+    <members>
+        <member name="T:DL_FileHandlingSystem.ClsDbDataLayer">
+            <summary>
+            Class to contains data layer method for connectivity 
+            </summary>
+        </member>
+        <member name="M:DL_FileHandlingSystem.ClsDbDataLayer.GetRecordDataFromDB(VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            Function to Fetch Records from dataBase
+            </summary>
+            <param name="vlo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DL_FileHandlingSystem.ClsDbDataLayer.StoreToDatabase(VO_FIleHandlingSystem.ValueObject)">
+            <summary>
+            Method to Store the Record into Database
+            </summary>
+            <param name="vo">object of Value object class to check which query will be executed on database</param>
+            <returns></returns>
+        </member>
+        <member name="T:DL_FileHandlingSystem.ClsDBAuthenticationDataLayer">
+            <summary>
+            Class to Authenticate the user
+            </summary>
+        </member>
+        <member name="M:DL_FileHandlingSystem.ClsDBAuthenticationDataLayer.GetAuthenticated(VO_FIleHandlingSystem.AuthenticatorValueObject)">
+            <summary>
+            Function to Fetch Records from dataBase
+            </summary>
+            <param name="vo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DL_FileHandlingSystem.DLcls_FileHandlingSystem">
+            <summary>
+            partial class of Data Layer
+            </summary>
+        </member>
+        <member name="M:DL_FileHandlingSystem.DLcls_FileHandlingSystem.CreateOrOpenFile(VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            Create A New flat file, Or Open A Existing File
+            fetch the Records from the Exisiting file, If present and Inset them into Records variable of Value Object
+            </summary>
+        </member>
+        <member name="M:DL_FileHandlingSystem.DLcls_FileHandlingSystem.CloseFile(VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            Close the Opened File, And release All the locks on the file
+            </summary>
+        </member>
+        <member name="M:DL_FileHandlingSystem.DLcls_FileHandlingSystem.FinalSave(VO_FIleHandlingSystem.ValueObject,VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            Store the Record in the File. 
+            Insert, Update And Deletion of records is Done here.
+            </summary>
+            <param name="vo"></param>
+            <param name="vlo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DL_FileHandlingSystem.ClsAuthenticator">
+            <summary>
+            class to contain members to authenticate the ser
+            </summary>
+        </member>
+        <member name="M:DL_FileHandlingSystem.ClsAuthenticator.Authenticate(VO_FIleHandlingSystem.AuthenticatorValueObject,VO_FIleHandlingSystem.ValueLayerObject)">
+            <summary>
+            Authenticate theuser with current user credentials
+            </summary>
+            <param name="vo"></param>
+            <param name="vlo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DL_FileHandlingSystem.ClsAuthenticator.CheckUsers(VO_FIleHandlingSystem.AuthenticatorValueObject)">
+            <summary>
+            Authenticate the user based on his user type and his credentials
+            </summary>
+            <param name="vo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DL_FileHandlingSystem.ClsAuthenticator.DecryptFile(System.String,System.IO.MemoryStream)">
+            <summary>
+             Decrypt the Embedded resource stream into Output Stream
+            </summary>
+            <param name="resourceName">Resource stream path</param>
+            <param name="outputStream">Object of memory stream class to store the decrypted resource</param>
+        </member>
+        <member name="M:DL_FileHandlingSystem.ClsAuthenticator.GetEncryptionCode">
+            <summary>
+            FUnction to Get Byte value of encryption key
+            </summary>
+            <returns>Byte Value of key</returns>
+        </member>
+        <member name="T:DL_FileHandlingSystem.FHSDataset">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+    </members>
+</doc>

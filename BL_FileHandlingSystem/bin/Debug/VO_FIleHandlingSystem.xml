@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VO_FIleHandlingSystem</name>
+    </assembly>
+    <members>
+        <member name="T:VO_FIleHandlingSystem.ValueObject">
+            <summary>
+            Class to allow communication between the various classes and DLL's throught the properties
+            </summary>
+        </member>
+        <member name="M:VO_FIleHandlingSystem.ValueObject.#ctor">
+            <summary>
+            Non Parameterized Constructor of Value object
+            </summary>
+        </member>
+        <member name="M:VO_FIleHandlingSystem.ValueObject.#ctor(System.String)">
+            <summary>
+            Parameterized Constructor of Value object
+            </summary>
+            <param name="data">current record</param>
+        </member>
+        <member name="T:VO_FIleHandlingSystem.AuthenticatorValueObject">
+            <summary>
+            Value object class to allow communication of authentication properties
+            </summary>
+        </member>
+        <member name="T:VO_FIleHandlingSystem.EmployeeData">
+            <summary>
+            Structure the break down the record into various properties
+            </summary>
+        </member>
+        <member name="T:VO_FIleHandlingSystem.ValueLayerObject">
+            <summary>
+            class to provide static and least changeable data to various DLL's
+            </summary>
+        </member>
+        <member name="F:VO_FIleHandlingSystem.ValueLayerObject.records">
+            <summary>
+            List of records to store the user data
+            </summary>
+        </member>
+    </members>
+</doc>

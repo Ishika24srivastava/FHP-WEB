@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rsc_Resources</name>
+    </assembly>
+    <members>
+        <member name="T:Mdl_resources.EditMode">
+            <summary>
+            Enum to Check the Mode in which record will be changed
+            </summary>
+        </member>
+        <member name="T:Mdl_resources.ColumnNamesEnum">
+            <summary>
+            Enum to Define to Column Names
+            </summary>
+        </member>
+        <member name="T:Mdl_resources.Qualification">
+            <summary>
+            Enum to Select Qualification
+            </summary>
+        </member>
+        <member name="T:Mdl_resources.ErrorMessage">
+            <summary>
+            Enum to Store Error Messages
+            </summary>
+        </member>
+        <member name="T:Mdl_resources.caption">
+            <summary>
+            Enum to Store Caption
+            </summary>
+        </member>
+        <member name="T:Mdl_resources.Messages">
+            <summary>
+            ENum to store messages that will be displayed to the user
+            </summary>
+        </member>
+        <member name="T:Mdl_resources.MessageCaptions">
+            <summary>
+            Enum to store Message Captions
+            </summary>
+        </member>
+        <member name="T:Mdl_resources.Title">
+            <summary>
+            Store the title for the application
+            </summary>
+        </member>
+        <member name="T:Mdl_resources.UserTypes">
+            <summary>
+            Enum to store User Types
+            </summary>
+        </member>
+        <member name="T:Mdl_resources.Resources">
+            <summary>
+            Class which contains methods for resources
+            </summary>
+        </member>
+        <member name="M:Mdl_resources.Resources.GetEnumDescription(System.Enum)">
+            <summary>
+            Get The Description of Enum, If present, otherwise return the Enum name in string
+            </summary>
+            <param name="value">ENum of Any TYpe</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mdl_resources.Resources.GetEnumIndexFromDescription``1(System.String)">
+            <summary>
+            Function to Get the Enum Name from the Enum Description, If found otherwise return null
+            </summary>
+            <typeparam name="T">User Defined Enum Type</typeparam>
+            <param name="description">Description of that Enum</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
