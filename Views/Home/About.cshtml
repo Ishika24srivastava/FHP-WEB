@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "AboutUs";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        p, ul, ol {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Handling System</h1>
+        <img src="@Url.Content("~/Content/Images/photo1.jpg")" alt="Image Description" />
+
+
+        <p>Welcome to our software File Handling System. We take pride in crafting robust and user-friendly applications that meet the needs of our clients.</p>
+        <p>Below, we provide an overview of our recent project, highlighting its architecture and key features.</p>
+
+        <h2>Project Overview:</h2>
+        <ul>
+            <li><strong>Layer Architecture:</strong> We implemented a scalable and maintainable layer architecture to ensure separation of concerns and facilitate future enhancements.</li>
+            <li><strong>Binary File Generation:</strong> Data is stored in binary format for efficient storage and retrieval, enhancing performance and data security.</li>
+            <li><strong>Grid View with Filtering:</strong> The application features a grid view with filtering capabilities on each column, enabling users to easily search and filter data based on their preferences.</li>
+        </ul>
+
+        <h2>Architecture Overview:</h2>
+        <ol>
+            <li><strong>Presentation Layer:</strong> Our presentation layer comprises a user-friendly interface developed using [choose appropriate GUI framework]. It includes: Grid view with filtering options for each column, allowing users to refine search results.</li>
+            <li><strong>Business Logic Layer:</strong> The business logic layer manages core application logic, encompassing CRUD operations and data processing. Key features include: Validation of input data against business rules to maintain data consistency. Handling of filtering operations to optimize data retrieval efficiency.</li>
+            <li><strong>Data Access Layer:</strong> Our data access layer interacts with the underlying data storage mechanism, which involves: Reading from and writing to binary files for efficient data storage. Serialization and deserialization techniques to facilitate data storage and retrieval in binary format.</li>
+            <li><strong>Validation Layer:</strong> To ensure the reliability of user inputs, we implemented a validation layer that: Enforces length constraints and other business rules on user inputs. Provides clear error messages or notifications for invalid inputs, enhancing user experience.</li>
+        </ol>
+    </div>
+</body>
+</html>

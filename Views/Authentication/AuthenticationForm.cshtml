@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Authentication Login Form";
+    Layout = null; // Use a layout if needed
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentication Login Form</title>
+    <link rel="icon" type="image/jpg" href="@Url.Content("~/Content/Images/ISlogo.jpg")">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6d71b8, #8f94fb);
+            font-family: Arial, sans-serif;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        input[type=text], input[type=password], select, button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        select {
+
+            width: 100%;
+        }
+
+        button {
+            background-color: #4e54c8;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            button:hover {
+                background-color: #434c9c;
+            }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="@Url.Content("~/Content/Images/Lock1.png")" class="logo" alt="Lock Icon">
+
+        @using (Html.BeginForm("AuthenticationForm", "Authentication", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+
+            <div>
+
+                <select name="UserType" id="UserType">
+                    <option value="SuperAdmin">Super Admin</option>
+                    <option value="Admin">Admin</option>
+                    <option value="GuestUser">Guest User</option>
+                    <option value="Self">Self</option>
+                </select>
+            </div>
+            <div>
+
+                <input type="text" name="Username" id="Username" placeholder="Username" />
+            </div>
+            <div>
+
+                <input type="password" name="Password" id="Password" placeholder="password" />
+            </div>
+
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+﻿
+nav {
+    background-color: darkgray;
+    padding: 10px 0;
+    color: Black;
+}
+    nav li#btn-new:hover,
+    nav li#btn-update:hover,
+    nav li#btn-delete:hover,
+    nav li#btn-clearsearch:hover {
+        text-decoration: underline;
+    }
+
+    nav ol li {
+        display: inline-block;
+        padding: 0 5px; 
+        color: black;
+    }
+
+   
+    nav ol .disabled {
+        pointer-events: none; 
+        opacity: 0.5;
+    }
+
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+        
+        
+    }
+
+
+    
+table {
+    width: 95%;
+    margin-inline: 10px;
+    border-collapse: collapse;
+}
+
+tr th,
+tr td {
+    padding-inline: 3px;
+    margin: 0px;
+    text-align: left;
+    padding: 8px; 
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: darkgray;
+    font-weight: bold;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+
+tr:nth-child(odd) {
+    background-color: #ffffff; 
+}
+
+#searchbar {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 2px;
+    font-size: 12px;
+    padding-inline: 10px;
+}
+
+#btnsearch {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: none;
+    padding: 2px;
+    font-size: 12px;
+    padding-inline: 5px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 9999; 
+    display: none;
+}
+
+.filterbox {
+    border: thin black;
+    background-color: white;
+    width: 82%;
+}
+
+.clear-button {
+    cursor: pointer;
+    display: none;
+    font-size: 16px;
+}

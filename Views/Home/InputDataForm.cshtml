@@ -1,0 +1,549 @@
+﻿
+@{
+    ViewBag.Title = "Input Data Form";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Data Form</title>
+    
+    <style>
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+        }
+
+       
+        h1 {
+            text-align: center;
+        }
+
+      
+        label {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Style for text input, select, and textarea */
+        input, select, textarea {
+            padding: 5px;
+            margin: 5px 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid black;
+            width: 60%;
+        }
+
+        /* Style for buttons */
+        button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: lightblue;
+            color: black;
+            border: 1px solid black;
+            font-weight: bold; 
+        }
+
+            
+            button:hover {
+                background-color: gray;
+            }
+
+
+    </style>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>
+            <center><u>Input Data Form</u></center>
+        </h1>
+        <br />
+        <form method="post">
+            <label for="SerialNumber">Serial Number</label>
+            <input type="number" name="SerialNumber" id="SerialNumber" disabled /><br />
+            <br />
+            <label for="prefix">Prefix</label>
+            <input type="text" name="prefix" id="prefix" /><br />
+            <br />
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" required id="firstname" /><br />
+            <br />
+
+            <label for="middlename">Middle Name</label>
+            <input type="text" name="middlename" id="middlename" /><br />
+            <br />
+
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" /><br />
+            <br />
+            <label for="dob">Date Of Birth</label>
+            <input type="date" name="dob" id="dob" placeholder="" /><br /><br />
+
+            <label for="qualification">Qualification</label>
+
+            @using System.ComponentModel
+            @using System.Reflection
+            @using FileHandlingSystem.Resources
+
+            @{
+                var qualifications = Enum.GetValues(typeof(Qualification));
+            }
+
+            <select id="qualificationoptions" onchange="updatequalification(this)">
+                @foreach (Qualification qualification in qualifications)
+                {
+                    var value = (int)qualification;
+                    var description = qualification.GetType()
+                                                  .GetMember(qualification.ToString())
+                                                  .First()
+                                                  .GetCustomAttribute<DescriptionAttribute>()
+                                                  .Description;
+                    <option value="@value">@description</option>
+                }
+            </select>
+
+            <input type="hidden" name="qualification" id="qualification" value="0" /><br />
+            <br />
+
+            <label for="currentcompany">Current Company</label>
+            <input type="text" name="currentcompany" id="currentcompany" required /><br /><br />
+
+            <label for="joiningdate">Joining Date</label>
+            <input type="date" name="joiningdate" id="joiningdate" required /><br />
+            <br />
+            <label for="currentaddress">Current Address</label>
+            <textarea name="currentaddress" id="txt_currentaddress"></textarea><br />
+            <br />
+            <hr />
+            <center>
+                <div id="editableForm">
+                    <button type="submit" id="addbtn" onclick="adddatatodatabase()">Add</button> &nbsp;
+                    <button type="submit" id="editbtn" onclick="updatedatatodatabase()">Edit</button>
+                    <br /><br />
+                    <button type="reset" onclick="clearform()">Clear</button>
+                </div>
+                <div id="nonEditableForm" style="visibility: hidden">
+                    <button onclick="showfirstrecord()" id="btn-first">First</button> &nbsp; <button onclick="showpreviousrecord()" id="btn-previous">previous</button>&nbsp;
+                    <button onclick="shownextrecord()" id="btn-next">Next</button> &nbsp;
+                    <button onclick="showlastrecord()" id="btn-last">Last</button>
+                </div>
+            </center>
+        </form>
+    </main>
+    <script>
+        var serialnumber = @Html.Raw(Json.Encode(ViewBag.SerialNumber ?? "1"));
+
+
+        // Get the value of the 'data' parameter from the URL
+        var formtype = getUrlParameter("formtype");
+        EnableButtons();
+
+
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+            var results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function updatequalification(selected) {
+            var selectedIndex = selected.selectedIndex;
+            var selectedValue = selected.options[selectedIndex].value; // Get the value of the selected option
+            document.getElementById('qualification').value = selectedValue;
+            console.log(selectedValue);
+        };
+        var userdata = null;
+
+        function EnableButtons() {
+            if (formtype == "New") {
+                var button = document.getElementById("editbtn");
+                if (button) {
+                    button.disabled = true;
+                }
+                else {
+                    console.log("not found");
+                }
+                document.getElementById('SerialNumber').value = serialnumber;
+
+            } else if (formtype == "Update") {
+                document.getElementById("addbtn").disabled = true;
+                GetDataFromServer();
+            }
+            else {
+                document.getElementById("editableForm").style.visibility = "hidden";
+                document.getElementById("nonEditableForm").style.visibility = "visible";
+                GetDataFromServer();
+
+                var form = document.querySelector('form');
+                var elements = form.querySelectorAll('input, select, textarea');
+
+                elements.forEach(function (element) {
+                    if (element.tagName === 'SELECT') {
+                        element.disabled = true;
+                    } else {
+                        element.setAttribute('readonly', true);
+                    }
+                });
+
+            }
+        }
+
+        function GetDataFromServer() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/Home/GetDataFromServer', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var data = JSON.parse(xhr.responseText);
+                        // Populate form fields with received data
+                        FillDataInForm(data);
+                        userdata = data;
+                        if (formtype != "Update" && formtype != "New") {
+                            if (userdata.firstindex == true) {
+                                document.getElementById("btn-first").disabled = true;
+                                document.getElementById("btn-previous").disabled = true;
+                            }
+                            if (userdata.lastIndex == true) {
+                                document.getElementById("btn-next").disabled = true;
+                                document.getElementById("btn-last").disabled = true;
+                            }
+                        }
+                        // Populate other form fields as needed
+                    } else {
+                        console.error('Error fetching data from server');
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function FillDataInForm(data) {
+            document.getElementById('SerialNumber').value = data.SerialNumber;
+            document.getElementById('prefix').value = data.Prefix;
+            document.getElementById('firstname').value = data.FirstName;
+            document.getElementById('middlename').value = data.MiddleName;
+            document.getElementById('lastname').value = data.LastName;
+            document.getElementById('qualification').value = data.Qualification;
+            document.getElementById('qualificationoptions').selectedIndex = (Number)(data.Qualification) -1;
+            document.getElementById('currentcompany').value = data.CurrentCompany;
+            document.getElementById('joiningdate').value = data.JoiningDate;
+            document.getElementById('txt_currentaddress').value = data.CurrentAddress;
+
+            if (data.DateOfBirth === "1800-01-01") {
+                if (!(formtype == "Update")) {
+                    document.getElementById('dob').style.display = "none";
+                }
+
+            } else {
+                document.getElementById('dob').value = data.DateOfBirth;
+            }
+        }
+
+
+        function updatedatatodatabase() {
+            event.preventDefault();
+
+            var formData = {
+                SerialNumber: $('#SerialNumber').val(),
+                Prefix: $('#prefix').val(),
+                FirstName: $('#firstname').val(),
+                MiddleName: $('#middlename').val(),
+                LastName: $('#lastname').val(),
+                DateOfBirth: $('#dob').val(),
+                Qualification: $('#qualification').val(),
+                CurrentCompany: $('#currentcompany').val(),
+                JoiningDate: $('#joiningdate').val(),
+                CurrentAddress: $('#txt_currentaddress').val()
+            };
+
+            var isFormUpdated = false;
+
+            // Compare formData with data
+            for (var key in formData) {
+                if (formData[key] !== userdata[key]) {
+                    if (key == "DateOfBirth" && userdata.DateOfBirth === "1800-01-01" && formData.DateOfBirth == "") {
+
+                    }
+                    else {
+                        isFormUpdated = true;
+                        break;
+                    }
+
+                }
+            }
+
+
+
+
+            if (isFormUpdated) {
+
+                if (formData.DateOfBirth == "") {
+                    formData.DateOfBirth = "1800-01-01";
+                }
+                if (formData.JoiningDate == "") {
+                    formData.JoiningDate = "1800-01-01";
+                }
+
+                $.ajax({
+                    url: '@Url.Action("Update", "Home")', // Specify your controller action URL
+                    method: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        // Check if the operation was successful
+                        if (response.success) {
+                            // Load the new view upon success
+                            window.close();
+                        } else {
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle errors
+                        console.log('Error occurred: ' + error);
+                    }
+                });
+
+            }
+            else {
+                window.close();
+            }
+        }
+
+
+        function adddatatodatabase() {
+        event.preventDefault(); // Prevent the default form submission
+
+
+        var formData = {
+            SerialNumber: $('#SerialNumber').val(),
+            Prefix: $('#prefix').val(),
+            FirstName: $('#firstname').val(),
+            MiddleName: $('#middlename').val(),
+            LastName: $('#lastname').val(),
+            DateOfBirth: $('#dob').val(),
+            Qualification: $('#qualification').val(),
+            CurrentCompany: $('#currentcompany').val(),
+            JoiningDate: $('#joiningdate').val(),
+            CurrentAddress: $('#txt_currentaddress').val()
+            };
+
+            if (formData.DateOfBirth == "") {
+                formData.DateOfBirth = "1800-01-01";
+            }
+            if (formData.JoiningDate == "") {
+                formData.JoiningDate = "1800-01-01";
+            }
+
+
+        $.ajax({
+            url: '@Url.Action("InputDataForm", "Home")', // Specify your controller action URL
+            method: 'POST',
+            data: formData,
+            success: function (response) {
+                // Check if the operation was successful
+                if (response.success) {
+                    // Load the new view upon success
+                    window.close();
+                } else {
+                }
+            },
+            error: function (xhr, status, error) {
+                // Handle errors
+                console.log('Error occurred: ' + error);
+            }
+        });
+        }
+
+
+        function clearform() {
+
+            var formData = {
+                SerialNumber: $('#SerialNumber').val(),
+                Prefix: $('#prefix').val(),
+                FirstName: $('#firstname').val(),
+                MiddleName: $('#middlename').val(),
+                LastName: $('#lastname').val(),
+                DateOfBirth: $('#dob').val(),
+                Qualification: $('#qualification').val(),
+                CurrentCompany: $('#currentcompany').val(),
+                JoiningDate: $('#joiningdate').val(),
+                CurrentAddress: $('#txt_currentaddress').val()
+            };
+
+            var newformdefaultdata = {
+                SerialNumber: serialnumber,
+                Prefix: "",
+                FirstName: "",
+                MiddleName: "",
+                LastName: "",
+                DateOfBirth: "",
+                Qualification: "0",
+                CurrentCompany:"",
+                JoiningDate: "",
+                CurrentAddress: ""
+            };
+
+            var isFormUpdated = false;
+            if (formtype == "Update") {
+                // Compare formData with data
+                for (var key in formData) {
+                    if (formData[key] !== userdata[key]) {
+                        if (key == "DateOfBirth" && userdata.DateOfBirth === "1800-01-01" && formData.DateOfBirth == "") {
+
+                        }
+                        else {
+                            isFormUpdated = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else {
+                for (var key in formData) {
+                    if (formData[key] !== newformdefaultdata[key]) {
+                            isFormUpdated = true;
+                            break;
+                    }
+                }
+            }
+
+
+            if (!isFormUpdated) {
+                if (formtype == "Update") {
+                    window.location.href = '@Url.Action("InputDataForm", "Home")' + "?formtype=New";
+                }
+                else {
+                    location.reload(true);
+                }
+
+            }
+            else {
+                if (confirm("You may lost your changed data")) {
+                    if (formtype == "Update") {
+                         window.location.href = '@Url.Action("InputDataForm", "Home")' + "?formtype=New";
+                    }
+                    else {
+                        location.reload(true);
+                    }
+                }
+
+            }
+    }
+
+
+        function showfirstrecord() {
+            event.preventDefault();
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/InputData/GetFirstRecord', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var data = JSON.parse(xhr.responseText);
+                        // Populate form fields with received data
+                        FillDataInForm(data);
+                        document.getElementById("btn-first").disabled = true;
+                        document.getElementById("btn-previous").disabled = true;
+                        document.getElementById("btn-next").disabled = false;
+                        document.getElementById("btn-last").disabled = false;
+                        // Populate other form fields as needed
+                    } else {
+                        console.error('Error fetching data from server');
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+
+        function showpreviousrecord() {
+            event.preventDefault();
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/InputData/GetPreviousRecord', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var data = JSON.parse(xhr.responseText);
+                        // Populate form fields with received data
+                        FillDataInForm(data);
+                        if (data.firstindex) {
+                            document.getElementById("btn-first").disabled = true;
+                            document.getElementById("btn-previous").disabled = true;
+                        }
+                        document.getElementById("btn-next").disabled = false;
+                        document.getElementById("btn-last").disabled = false;
+                        // Populate other form fields as needed
+                    } else {
+                        console.error('Error fetching data from server');
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function shownextrecord() {
+            event.preventDefault();
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/InputData/GetNextRecord', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var data = JSON.parse(xhr.responseText);
+                        // Populate form fields with received data
+                        FillDataInForm(data);
+                        if (data.lastIndex) {
+                            document.getElementById("btn-next").disabled = true;
+                            document.getElementById("btn-last").disabled = true;
+                        }
+                        document.getElementById("btn-first").disabled = false;
+                        document.getElementById("btn-previous").disabled = false;
+                        // Populate other form fields as needed
+                    } else {
+                        console.error('Error fetching data from server');
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function showlastrecord() {
+            event.preventDefault();
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/InputData/GetlastRecord', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var data = JSON.parse(xhr.responseText);
+                        // Populate form fields with received data
+                        FillDataInForm(data);
+                            document.getElementById("btn-next").disabled = true;
+                            document.getElementById("btn-last").disabled = true;
+                        document.getElementById("btn-first").disabled = false;
+                        document.getElementById("btn-previous").disabled = false;
+                        // Populate other form fields as needed
+                    } else {
+                        console.error('Error fetching data from server');
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

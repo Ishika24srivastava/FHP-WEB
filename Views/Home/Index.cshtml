@@ -1,0 +1,137 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File handling System</title>
+
+    <script>
+        var updateFormUrl = '@Url.Action("InputDataForm", "Home", new { area = "" })';
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/Scripts/mainFormJavaScript.js">
+
+    </script>
+    @Styles.Render("/Content/mainFormStyle.css")
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ol>
+                <li id="btn-new">New</li>
+                <li id="btn-update">Update</li>
+                <li id="btn-delete">Delete</li>
+                <li id="btn-clearsearch">Clear Search</li>
+                <li><a onclick="openModal('@Url.Action("About", "Home", new { area = "" })')">About Us</a></li>
+                <li style="border-right: none">
+                    <input type="text" name="searchbar" id="searchbar" /><button id="btnsearch">
+                        Search
+                    </button>
+                </li>
+            </ol>
+        </nav>
+    </header>
+    <div id="mainform">
+        <br />
+        <br />
+        <main>
+            <table id="myTable">
+                
+                <thead>
+                    <tr id="headerrow">
+                        <th onclick="sortTable(0)">Serial Number</th>
+                        <th onclick="sortTable(1)">Prefix</th>
+                        <th onclick="sortTable(2)">First Name</th>
+                        <th onclick="sortTable(3)">Middle Name</th>
+                        <th onclick="sortTable(4)">Last Name</th>
+                        <th onclick="sortTable(5)">Date Of Birth</th>
+                        <th onclick="sortTable(6)">Qualification</th>
+                        <th onclick="sortTable(7)">Current Company</th>
+                        <th onclick="sortTable(8)">Joining Date</th>
+                        <th onclick="sortTable(9)">Current Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                        <th><input type="text" name="filterbox" class="filterbox" />&nbsp;<span class="clear-button">&#10006;</span></th>
+                    </tr>
+                    @using FileHandlingSystem.Resources
+                    @{
+                        var rsc = new clsResoucresModuleResources();
+                    }
+                    @if (ViewBag.records != null)
+                    {
+                        for (int i = 0; i < ViewBag.records.Count; i++)
+                        {
+                            <tr onclick="handleClick(this)" ondblclick="handleDoubleClick(this)" class="userdata-row">
+                                <td>@(((string)ViewBag.records[i]).Substring(0, 18).Trim())</td>
+                                <td>@(((string)ViewBag.records[i]).Substring(18, 7).Trim())</td>
+                                <td>@(((string)ViewBag.records[i]).Substring(25, 50).Trim())</td>
+                                <td>@(((string)ViewBag.records[i]).Substring(75, 25).Trim())</td>
+                                <td>@(((string)ViewBag.records[i]).Substring(100, 50).Trim())</td>
+                                @{
+                                    var dob = ((string)ViewBag.records[i]).Substring(150, 10).Trim();
+                                    if (dob == "01/01/1800")
+                                    {
+                                        <td></td>
+                                    }
+                                    else
+                                    {
+                                        <td>@dob</td>
+                                    }
+                                }
+                                @{
+                                    int index = Convert.ToInt32(((string)ViewBag.records[i]).Substring(160, 2).Trim());
+                                    var qualificationstring = rsc.GetEnumDescription((Qualification)Enum.ToObject(typeof(Qualification), index));
+
+                                }
+                                <td>@qualificationstring</td>
+                                <td>@(((string)ViewBag.records[i]).Substring(162, 255).Trim())</td>
+                                @{
+                                    var jd = ((string)ViewBag.records[i]).Substring(417, 10).Trim();
+                                    if (jd == "01/01/1800")
+                                    {
+                                        <td></td>
+                                    }
+                                    else
+                                    {
+                                        <td>@jd</td>
+                                    }
+                                }
+                                <td>@(((string)ViewBag.records[i]).Substring(427, 500).Trim())</td>
+                            </tr>
+                        }
+                    }
+                    <tr onclick="handleEmptyRow(this)" id="emptyRow">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <!-- Overlay div -->
+    <div id="overlay"></div>
+</body>
+</html>
