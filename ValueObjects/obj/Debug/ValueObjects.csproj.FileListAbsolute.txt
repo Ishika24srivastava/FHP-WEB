@@ -1,9 +1,0 @@
-C:\Users\Hp\source\repos\FHP _NEW\ValueObjects\bin\Debug\ValueObjects.dll
-C:\Users\Hp\source\repos\FHP _NEW\ValueObjects\bin\Debug\ValueObjects.pdb
-C:\Users\Hp\source\repos\FHP _NEW\ValueObjects\obj\Debug\ValueObjects.csproj.AssemblyReference.cache
-C:\Users\Hp\source\repos\FHP _NEW\ValueObjects\obj\Debug\ValueObjects.csproj.CoreCompileInputs.cache
-C:\Users\Hp\source\repos\FHP _NEW\ValueObjects\obj\Debug\ValueObjects.dll
-C:\Users\Hp\source\repos\FHP _NEW\ValueObjects\obj\Debug\ValueObjects.pdb
-C:\Users\Hp\source\repos\FHP _NEW\ValueObjects\bin\Debug\Resource.dll
-C:\Users\Hp\source\repos\FHP _NEW\ValueObjects\bin\Debug\Resource.pdb
-C:\Users\Hp\source\repos\FHP _NEW\ValueObjects\obj\Debug\ValueObjects.csproj.CopyComplete
